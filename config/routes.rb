@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [:create]
+
   get '/join', to: 'sessions#new'
-  
+
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#create'
 end
