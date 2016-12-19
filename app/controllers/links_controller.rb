@@ -1,3 +1,5 @@
+require './app/services/hot_read_service'
+
 class LinksController < ApplicationController
   before_action :require_login
 
@@ -28,7 +30,12 @@ class LinksController < ApplicationController
       flash[:error] = @link.errors.to_a
       redirect_to edit_link_path(@link)
     end
+  end
 
+  def read
+    @link = Link.find(params[:id])
+    @link.read_it
+    redirect_to @link.url
   end
 
   private
