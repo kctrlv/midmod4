@@ -8,3 +8,10 @@ def login_as_bob
   fill_in "Password confirmation", with: "1234"
   click_button "Login"
 end
+
+def login_as_bob_and_submit_link
+  login_as_bob
+  fill_in "Title", with: "Cool link"
+  fill_in "Url", with: "https://stallman.org/"
+  click_button "Submit"
+end

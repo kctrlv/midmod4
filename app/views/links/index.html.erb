@@ -11,7 +11,15 @@
 
 <div class="links">
   <h3>Your Links:</h3>
-  <% @links.each do |link| %>
-    <p><%= link_to link.title, link.url %></p> 
-  <% end %>
+  <table>
+    <th>Title</th>
+    <th>Edit</th>
+    <% @links.each do |link| %>
+      <tr>
+        <td><%= link_to link.title, link.url %></td>
+        <td><%= button_to "Edit", edit_link_path(link), method: :get %></td>
+      </tr>
+    <% end %>
+
+  </table>
 </div>
