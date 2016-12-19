@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
   def require_login
     redirect_to join_path unless @current_user
   end
+
+  def set_session(user)
+    session[:user_id] = user.id
+  end
+
 end

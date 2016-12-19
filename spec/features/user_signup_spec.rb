@@ -6,4 +6,14 @@ RSpec.feature "User Signup", :type => :feature do
     expect(current_path).to eq("/join")
     expect(page).to have_content("Login or Sign Up")
   end
+
+  scenario "User fills out form and signs up" do
+    visit '/'
+    click_link "Sign Up"
+    fill_in "Email", with: "bob@aol.com"
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
+    click_button "Sign Up"
+    expect(current_path).to eq(links_path)
+  end
 end
