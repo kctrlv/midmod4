@@ -16,7 +16,7 @@
 <div class="container">
   <header>
     <% if @current_user %>
-      <p> Welcome, <%= @current_user.email %> </p>
+      <span> Welcome, <%= @current_user.email %> </span>
       <%= link_to "Sign Out", logout_path, method: :delete %>
     <% end %>
   </header>

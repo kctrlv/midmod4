@@ -39,5 +39,4 @@ RSpec.feature "User Signup, Login, Logout", :type => :feature do
     click_link "Sign Out"
     expect(current_path).to eq("/join")
   end
-
 end

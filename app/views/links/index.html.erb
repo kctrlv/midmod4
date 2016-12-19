@@ -1,0 +1,17 @@
+<%= form_for @link, url: links_path do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%= f.submit "Submit" %>
+<% end %>
+
+
+<div class="links">
+  <h3>Your Links:</h3>
+  <% @links.each do |link| %>
+    <p><%= link_to link.title, link.url %></p> 
+  <% end %>
+</div>
