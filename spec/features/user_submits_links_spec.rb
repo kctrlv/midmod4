@@ -6,7 +6,7 @@ RSpec.feature "User submits links", :type => :feature do
     fill_in "Title", with: "Cool link"
     fill_in "Url", with: "https://stallman.org/"
     click_button "Submit"
-    within('.links') do
+    within('#links-list') do
       expect(page).to have_link("Cool link")
     end
   end

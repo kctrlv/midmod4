@@ -1,15 +1,15 @@
 <%= form_for @link, url: links_path do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, id: "link_title" %>
 
   <%= f.label :url %>
-  <%= f.text_field :url %>
+  <%= f.text_field :url, id: "link_url" %>
 
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", id: "submit_link" %>
 <% end %>
 
 
-<div class="links">
+<div id="links-list">
   <h3>Your Links:</h3>
   <table>
     <th>Title</th>

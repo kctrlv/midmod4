@@ -7,7 +7,7 @@ RSpec.feature "User updates links", :type => :feature do
     fill_in "Title", with: "Great link"
     fill_in "Url", with: "https://www.eff.org/"
     click_button "Submit"
-    within('.links') do
+    within('#links-list') do
       expect(page).to have_link("Great link")
     end
   end
