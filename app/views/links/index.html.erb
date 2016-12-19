@@ -16,7 +16,7 @@
     <th>Edit</th>
     <% @links.each do |link| %>
       <tr>
-        <td><%= link_to link.title, link.url %></td>
+        <td><%= link_to link.title, read_link_path(link) %></td>
         <td><%= button_to "Edit", edit_link_path(link), method: :get %></td>
       </tr>
     <% end %>
