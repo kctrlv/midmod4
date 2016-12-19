@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "User Signup", :type => :feature do
+RSpec.feature "User Signup, Login, Logout", :type => :feature do
   scenario "User is redirected to signup page when visiting root" do
     visit "/"
     expect(current_path).to eq("/join")
@@ -16,4 +16,16 @@ RSpec.feature "User Signup", :type => :feature do
     click_button "Sign Up"
     expect(current_path).to eq(links_path)
   end
+
+  scenario "Registered user can login" do
+    User.create(email: 'bob@aol.com', password: '1234')
+    visit '/'
+    click_link "Login"
+    fill_in "Email", with: "bob@aol.com"
+    fill_in "Password", with: "1234"
+    fill_in "Password confirmation", with: "1234"
+    click_button "Login"
+    expect(current_path).to eq(links_path)
+  end
+
 end

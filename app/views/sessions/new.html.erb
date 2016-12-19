@@ -1,1 +1,13 @@
-<h1><%= link_to "Login", login_path %> or <%= link_to "Sign Up", signup_path %></h1>
+<h1>Login</h1>
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "Login" %>
+<% end %>
