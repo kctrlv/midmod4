@@ -12,4 +12,9 @@ class Link < ActiveRecord::Base
       end
     end
   end
+
+  def read_it
+    HotReadService.read(self) unless self.read
+    update_attribute(:read, true)
+  end
 end

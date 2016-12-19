@@ -34,7 +34,7 @@ class LinksController < ApplicationController
 
   def read
     @link = Link.find(params[:id])
-    HotReadService.read(@link) unless @link.read
+    @link.read_it
     redirect_to @link.url
   end
 
