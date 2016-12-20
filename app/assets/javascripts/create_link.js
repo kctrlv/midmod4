@@ -4,7 +4,7 @@ $(document).ready(function(){
 
   $newLinkTitle = $("#link_title");
   $newLinkUrl  = $("#link_url");
-  $userId = $("#links-list").data("user")
+  $userId = $("header").find("span").attr('id')
 
   $("#submit_link").on('click', createLink);
 })
@@ -24,7 +24,7 @@ function createLink (event){
 
 function getLinkData() {
  return {
-   user_id: $userId
+   user_id: $userId,
    title: $newLinkTitle.val(),
    url: $newLinkUrl.val(),
  }

@@ -5,7 +5,7 @@ class LinksController < ApplicationController
 
   def index
     @link = Link.new
-    @links = Link.where(user: current_user)
+    @links = Link.where(user: current_user).reverse
   end
 
   def create
