@@ -15,6 +15,7 @@
       <tr>
         <td><%= link_to link.title, read_link_path(link) %></td>
         <td><%= button_to "Edit", edit_link_path(link), method: :get %></td>
+        <td><%= button_to "Delete", link_path(link), method: :delete%></td>
       </tr>
     <% end %>
 
