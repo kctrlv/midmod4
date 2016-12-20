@@ -8,12 +8,9 @@
   <%= f.submit "Submit", id: "submit_link" %>
 <% end %>
 
-
+<h3>Your Links:</h3>
 <div id="links-list">
-  <h3>Your Links:</h3>
   <table>
-    <th>Title</th>
-    <th>Edit</th>
     <% @links.each do |link| %>
       <tr>
         <td><%= link_to link.title, read_link_path(link) %></td>
