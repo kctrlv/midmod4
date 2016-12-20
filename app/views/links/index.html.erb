@@ -13,7 +13,8 @@
   <table>
     <% @links.each do |link| %>
       <tr>
-        <td class="<%= link.read ? "read" : "unread" %>"><%= link_to link.title, read_link_path(link) %></td>
+        <td> <%= link.title %></td>
+        <td class="<%= link.read ? "read" : "unread" %>"><%= link_to link.url, read_link_path(link) %></td>
         <td><%= button_to "Edit", edit_link_path(link), method: :get %></td>
         <td><%= button_to "Delete", link_path(link), method: :delete%></td>
         <td>
