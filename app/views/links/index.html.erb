@@ -13,9 +13,14 @@
   <table>
     <% @links.each do |link| %>
       <tr>
-        <td><%= link_to link.title, read_link_path(link) %></td>
+        <td class="<%= link.read ? "read" : "unread" %>"><%= link_to link.title, read_link_path(link) %></td>
         <td><%= button_to "Edit", edit_link_path(link), method: :get %></td>
         <td><%= button_to "Delete", link_path(link), method: :delete%></td>
+        <% if link.read %>
+          <%= link_to "Mark as Unread", mark_as_unread_path(link) %>
+        <% else %>
+          <%= link_to "Mark as Read", mark_as_read_path(link) %>
+        <% end %>
       </tr>
     <% end %>
 

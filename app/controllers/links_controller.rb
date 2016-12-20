@@ -44,6 +44,18 @@ class LinksController < ApplicationController
     redirect_to links_path
   end
 
+  def mark_read
+    @link = Link.find(params[:id])
+    @link.read_it
+    redirect_to links_path
+  end
+
+  def mark_unread
+    @link = Link.find(params[:id])
+    @link.update_attribute(:read, false)
+    redirect_to links_path
+  end
+
   private
 
   def link_params

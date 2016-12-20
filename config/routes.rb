@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/links/:id/read', to: 'links#read', as: :read_link
+
+  get '/links/:id/mark_read', to: 'links#mark_read', as: 'mark_as_read'
+  get '/links/:id/mark_unread', to: 'links#mark_unread', as: 'mark_as_unread'
 end
